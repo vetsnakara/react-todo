@@ -5,6 +5,7 @@ body {
 
 html {
   box-sizing: border-box;
+  font-size: 14px;
 }
 
 body {
@@ -26,6 +27,12 @@ ul {
   list-style-type: none;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 #root {
   height: 100%;
 }
@@ -36,6 +43,8 @@ ul {
   max-width: 800px;
   height: 100%;
 }
+
+/* TODO */
 
 .todo {
   display: flex;
@@ -50,12 +59,21 @@ ul {
   }
 
   &__sidebar {
-    width: 200px;
+    width: 250px;
+    padding: 48px 20px;
     background-color: #E5E5E5;
     border-right: 2px solid #F1F1F1;
   }
 
   &__tasks {
     flex-grow: 1;
+  }
+
+  &__category-list {
+    margin-bottom: 35px;
+  }
+
+  &__all-tasks-btn {
+    margin-bottom: 35px;
   }
 }
