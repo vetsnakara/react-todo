@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Badge } from './components/Badge'
-import { Label } from './components/Label'
 import { CategoryList } from './components/CategoryList'
+import { AddCategory } from './components/AddCategory'
 
 import db from './db'
 
@@ -24,7 +24,7 @@ const App = () => {
         <div className='todo__sidebar'>
           <Badge
             text='Все задачи'
-            iconName="list"
+            iconName='list'
             iconSize={18}
             className='todo__all-tasks-btn'
             active={!activeId}
@@ -34,13 +34,7 @@ const App = () => {
             activeId={activeId}
             className='todo__category-list'
           />
-          <Label
-            iconName="add"
-            iconSize={15}
-            className='todo__add-category-btn'
-          >
-            Добавить категорию
-          </Label>
+          <AddCategory colors={db.colors} />
         </div>
         <div className='todo__tasks'>
           Tasks

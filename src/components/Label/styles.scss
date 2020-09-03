@@ -3,6 +3,8 @@
   align-items: center;
 
   &__icon {
+    display: flex;
+    align-items: center;
     margin-right: 10px;
   }
 }

@@ -31,6 +31,7 @@ button {
   background-color: transparent;
   border: none;
   outline: none;
+  font-size: inherit;
 }
 
 #root {
@@ -67,6 +68,7 @@ button {
 
   &__tasks {
     flex-grow: 1;
+    padding: 48px 20px;
   }
 
   &__category-list {

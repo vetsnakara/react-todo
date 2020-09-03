@@ -1,0 +1,11 @@
+.button {
+  width: 100%;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+
+  &--primary {
+    color: #fff;
+    background-color: #4DD599;
+  }
+}
