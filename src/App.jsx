@@ -24,15 +24,18 @@ const App = () => {
 
   const addCategory = category => {
     const { hex } = db.colors.find(({ id }) => id === category.colorId)
+    const categoryId = categories[categories.length - 1].id + 1
 
     setCategories(categories => ([
       ...categories,
       {
-        id: categories[categories.length - 1].id + 1,
+        id: categoryId,
         color: hex,
         ...category
       }
     ]))
+
+    selectCategory(categoryId)
   }
 
   const removeCategory = categoryId => {
