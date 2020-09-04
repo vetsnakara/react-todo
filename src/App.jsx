@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import cn from 'classnames'
 
 import { Badge } from './components/Badge'
 import { CategoryList } from './components/CategoryList'
@@ -8,16 +9,37 @@ import db from './db'
 
 db.categories = db.categories.map(cat => {
   const { colorId } = cat
-  const color = db.colors.find(color => color.id === colorId)
+  const color = db.colors.find(({ id }) => id === colorId)
   return {
     ...cat,
     color: color.hex
   }
 })
 
-const activeId = null;
-
 const App = () => {
+  const [categories, setCategories] = useState(db.categories)
+  const [categoryId, setCategoryId] = useState(null)
+
+  const selectCategory = id => setCategoryId(id)
+
+  const addCategory = category => {
+    const { hex } = db.colors.find(({ id }) => id === category.colorId)
+
+    setCategories(categories => ([
+      ...categories,
+      {
+        id: categories[categories.length - 1].id + 1,
+        color: hex,
+        ...category
+      }
+    ]))
+  }
+
+  const removeCategory = categoryId => {
+    setCategories(categories => categories.filter(({ id }) => id !== categoryId))
+    selectCategory(null)
+  }
+
   return (
     <div className='container'>
       <div className='todo'>
@@ -26,15 +48,25 @@ const App = () => {
             text='Все задачи'
             iconName='list'
             iconSize={18}
-            className='todo__all-tasks-btn'
-            active={!activeId}
+            className={cn(
+              'todo__all-tasks-btn',
+              { 'active': !categoryId }
+            )}
+            onClick={() => selectCategory(null)}
           />
+
           <CategoryList
-            items={db.categories}
-            activeId={activeId}
+            items={categories}
+            selectedId={categoryId}
             className='todo__category-list'
+            onSelect={selectCategory}
+            onRemove={removeCategory}
           />
-          <AddCategory colors={db.colors} />
+
+          <AddCategory
+            colors={db.colors}
+            onAdd={addCategory}
+          />
         </div>
         <div className='todo__tasks'>
           Tasks

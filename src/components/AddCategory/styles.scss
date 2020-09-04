@@ -12,7 +12,7 @@
 
   &__popup {
     position: relative;
-    width: 235px;
+    width: 250px;
     padding: 18px;
     background: #FFFFFF;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
@@ -27,14 +27,15 @@
     cursor: pointer;
     transform: translate(40%, -40%);
   }
-  
-  &__input {
-    width: 100%;
-    padding: 8px 12px;
+
+  &__popup-input {
     margin-bottom: 15px;
-    border: 1px solid #EFEFEF;
-    border-radius: 4px;
-    outline: none;
+  }
+
+  &__popup-input-error {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #ff6464;
   }
 
   &__colors {

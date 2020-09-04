@@ -3,22 +3,21 @@ import cn from 'classnames'
 
 import './styles.scss'
 
-export const Button = ({
-  children,
-  variant = 'primary',
+export const Input = ({
+  type = 'text',
+  className,
   ...props
 }) => {
   const classes = cn(
-    'button',
-    { [`button--${variant}`]: variant }
+    'input',
+    className
   )
 
   return (
-    <button
+    <input
+      type={type}
       className={classes}
       {...props}
-    >
-      {children}
-    </button>
+    />
   )
 }

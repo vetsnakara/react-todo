@@ -7,11 +7,10 @@ export const SvgIcon = ({
   width,
   height,
   size = 100,
-  fill = '#000',
   ...props
 }) => {
   const icon = icons[name]
-    ? icons[name]({ fill })
+    ? icons[name]
     : null
 
   if (!icon) return null

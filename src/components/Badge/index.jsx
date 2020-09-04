@@ -6,8 +6,6 @@ import { Label } from '../Label'
 
 import './styles.scss'
 
-const CLASSNAME = 'badge'
-
 export const Badge = ({
   text,
   iconName = '',
@@ -15,23 +13,25 @@ export const Badge = ({
   pinSize = 10,
   pinColor = '#000',
   removable = false,
-  active = false,
   className,
   onClick = () => { },
   onRemove = () => { }
 }) => {
   const classes = cn(
-    CLASSNAME,
-    { [`${CLASSNAME}--active`]: active },
+    'badge',
     className
   )
 
   const labelProps = {
     iconName,
     iconSize,
-    iconColor: '#7C7C7C',
     pinColor,
     pinSize
+  }
+
+  const handleRemove = e => {
+    e.stopPropagation()
+    onRemove()
   }
 
   return (
@@ -42,11 +42,13 @@ export const Badge = ({
       <Label {...labelProps}>{text}</Label>
 
       {removable && (
-        <button className='badge__remove'>
+        <button
+          className='badge__remove-btn'
+          onClick={handleRemove}
+        >
           <SvgIcon
             name='remove'
             size={10}
-            fill='#E3E3E3'
           />
         </button>
       )}

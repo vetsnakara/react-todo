@@ -9,7 +9,6 @@ import './styles.scss'
 export const Label = ({
   iconName,
   iconSize,
-  iconColor,
   pinColor,
   pinSize,
   children: text,
@@ -28,7 +27,6 @@ export const Label = ({
             <SvgIcon
               name={iconName}
               size={iconSize}
-              fill={iconColor}
             />
           )
           : (

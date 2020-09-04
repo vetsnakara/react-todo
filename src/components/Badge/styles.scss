@@ -4,36 +4,38 @@
   padding: 10px 12px;
   border-radius: 4px;
   cursor: pointer;
-  transition: 
-    background-color .1s ease-out,
-    box-shadow .1s ease-out;
 
-  &:hover,
-  &--active {
-    background-color: #fff;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.03);
-  }
-
-  &:hover {
-    .badge__remove {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  &__remove {
+  &__remove-btn {
     display: flex;
     align-items: center;
-    visibility: hidden;
-    opacity: 0;
     margin-left: auto;
     cursor: pointer;
-    transition:
-      opacity .3s ease-out,
-      transform .2s ease-out;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: transform .2s ease-out;
 
     &:hover {
       transform: scale(1.1);
     }
+  }
+
+  &:hover {
+    background-color: rgba(#fff, 0.5);
+
+    .badge__remove-btn {
+      visibility: visible;
+      opacity: 1;
+
+      & path {
+        fill: rgba(#000, 0.6);
+      }
+    }
+  }
+
+  &.active {
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.03);
   }
 }

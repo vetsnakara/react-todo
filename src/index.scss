@@ -77,5 +77,9 @@ button {
 
   &__all-tasks-btn {
     margin-bottom: 35px;
+
+    & path {
+      fill: #7C7C7C;
+    }
   }
 }

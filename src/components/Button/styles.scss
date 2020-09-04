@@ -4,6 +4,10 @@
   padding: 8px 15px;
   cursor: pointer;
 
+  &:hover {
+    background-color: darken(#4DD599, 10)
+  }
+
   &--primary {
     color: #fff;
     background-color: #4DD599;

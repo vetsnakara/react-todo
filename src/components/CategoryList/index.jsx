@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 
 import { Badge } from '../Badge'
 
@@ -6,7 +7,9 @@ import './styles.scss'
 
 export const CategoryList = ({
   items,
-  activeId,
+  selectedId,
+  onSelect,
+  onRemove,
   ...props
 }) => {
   return (
@@ -23,8 +26,10 @@ export const CategoryList = ({
             text={name}
             pinColor={color}
             pinSize={10}
-            active={id === activeId}
+            className={cn({ 'active': id === selectedId })}
             removable
+            onClick={() => onSelect(id)}
+            onRemove={() => onRemove(id)}
           />
         </li>
       ))}
