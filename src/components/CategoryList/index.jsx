@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 
-import { Badge } from '../Badge'
+import { Badge } from '..'
 
 import './styles.scss'
 

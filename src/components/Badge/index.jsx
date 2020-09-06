@@ -1,8 +1,10 @@
 import React from 'react'
 import cn from 'classnames'
 
-import { SvgIcon } from '../SvgIcon'
-import { Label } from '../Label'
+import {
+  SvgIcon,
+  Label
+} from '..'
 
 import './styles.scss'
 

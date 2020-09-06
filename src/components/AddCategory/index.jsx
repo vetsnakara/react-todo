@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import cn from 'classnames'
 import Color from 'color'
 
-import { Label } from '../Label'
-import { Pin } from '../Pin'
-
-import { SvgIcon } from '../SvgIcon'
-import { Button } from '../Button'
+import {
+  Label,
+  Pin,
+  SvgIcon,
+  Button,
+  Input
+} from '..'
 
 import './styles.scss'
-import { Input } from '../Input'
 
 export const AddCategory = ({
   colors,

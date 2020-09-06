@@ -1,0 +1,42 @@
+.checkbox {
+  display: inline-block;
+  
+  [type='checkbox'] {
+    display: none;
+  }
+  
+  path {
+    opacity: 0;
+  }
+
+  &__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #E8E8E8;
+    cursor: pointer;
+    transition: background-color .1s ease-out;
+
+    &:hover {
+      background-color: #E8E8E8;
+
+      & path {
+        opacity: 1;
+        fill: #B3B3B3;
+      }
+    }
+
+    [type='checkbox']:checked + & {
+      background-color: #4DD599;
+      border-color: #4DD599;
+
+      & path {
+        opacity: 1;
+        fill: #fff;
+      }
+    }
+  }
+}

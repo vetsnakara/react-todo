@@ -6,11 +6,12 @@ body {
 html {
   box-sizing: border-box;
   font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Lato, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -69,17 +70,5 @@ button {
   &__tasks {
     flex-grow: 1;
     padding: 48px 20px;
-  }
-
-  &__category-list {
-    margin-bottom: 35px;
-  }
-
-  &__all-tasks-btn {
-    margin-bottom: 35px;
-
-    & path {
-      fill: #7C7C7C;
-    }
   }
 }

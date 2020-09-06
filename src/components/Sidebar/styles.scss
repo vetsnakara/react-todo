@@ -1,0 +1,14 @@
+.sidebar {
+  &__all-tasks-btn {
+    margin-bottom: 25px;
+  
+    & path {
+      fill: #7C7C7C;
+    }
+  }
+
+  &__category-list {
+    margin-bottom: 35px;
+  }
+  
+}
