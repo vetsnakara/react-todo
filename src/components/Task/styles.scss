@@ -1,0 +1,45 @@
+.task {
+  $root: &;
+
+  display: flex;
+  align-items: center;
+
+  &__checkbox {
+    margin-right: 10px;
+  }
+
+  &__input {
+    flex-grow: 1;
+    padding: 5px;
+    font-family: Lato, Arial, sans-serif;
+    font-size: 16px;
+
+    &:read-only {
+      border-color: transparent;
+    }
+
+    #{$root}--completed &:read-only {
+      text-decoration: line-through;
+      color: lighten(#000000, 70);
+    }
+  }
+
+  &__remove-btn {
+    margin-left: 10px;
+    cursor: pointer;
+    visibility: hidden;
+    transition: transform .2s ease-out;
+
+    #{$root}:hover & {
+      visibility: visible;
+    }
+
+    & path {
+      fill: #E3E3E3;
+    }
+
+    &:hover {
+      transform: scale(1.2)
+    }
+  }
+}

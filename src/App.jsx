@@ -5,7 +5,7 @@ import {
   Tasks
 } from './components';
 
-import db from './db'
+import db from './db.json'
 
 db.categories = db.categories.map(cat => {
   const { colorId } = cat
@@ -18,6 +18,7 @@ db.categories = db.categories.map(cat => {
 
 export const App = () => {
   const [categories, setCategories] = useState(db.categories)
+  const [tasks, setTasks] = useState(db.tasks)
   const [categoryId, setCategoryId] = useState(null)
 
   const selectCategory = id => setCategoryId(id)
@@ -44,6 +45,20 @@ export const App = () => {
     selectCategory(null)
   }
 
+  const handleTaskToggle = id => {
+    setTasks(tasks => tasks.map((task) => task.id === id
+      ? ({
+        ...task,
+        completed: !task.completed
+      }) : task
+    ))
+  }
+
+  const handleTaskRemove = id => {
+    if (!window.confirm('Удалить задачу?')) return
+    setTasks(tasks => tasks.filter(task => task.id !== id))
+  }
+
   return (
     <div className='container'>
       <div className='todo'>
@@ -58,7 +73,11 @@ export const App = () => {
           />
         </aside>
         <main className='todo__tasks'>
-          <Tasks />
+          <Tasks
+            tasks={tasks}
+            onTaskToggle={handleTaskToggle}
+            onTaskRemove={handleTaskRemove}
+          />
         </main>
       </div>
     </div>

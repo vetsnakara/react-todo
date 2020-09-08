@@ -1,15 +1,28 @@
 import React from 'react'
+import cn from 'classnames'
 
 import { SvgIcon } from '..'
 
 import './styles.scss'
 
-export const Checkbox = ({ id }) => {
+export const Checkbox = ({
+  id,
+  className,
+  checked = false,
+  onChange = () => { }
+}) => {
+  const classes = cn(
+    'checkbox',
+    className
+  )
+
   return (
-    <div className='checkbox'>
+    <div className={classes}>
       <input
         id={id}
         type='checkbox'
+        checked={checked}
+        onChange={onChange}
       />
 
       <label

@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "classnames": "^2.2.6",
     "color": "^3.1.2",
+    "json-server": "^0.16.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3"
@@ -16,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "json-server --watch ./src/db.json --port 4444"
   },
   "eslintConfig": {
     "extends": "react-app"
