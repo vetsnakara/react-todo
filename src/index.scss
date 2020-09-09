@@ -70,5 +70,6 @@ button {
   &__tasks {
     flex-grow: 1;
     padding: 48px 20px;
+    overflow-y: auto;
   }
 }

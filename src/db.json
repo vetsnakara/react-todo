@@ -26,38 +26,38 @@
       "colorId": 1
     },
     {
+      "id": 6,
       "name": "Спорт",
-      "colorId": 3,
-      "id": 6
+      "colorId": 3
     },
     {
+      "id": 7,
       "name": "Курс по ReactJS ToDo",
-      "colorId": 7,
-      "id": 7
+      "colorId": 7
     }
   ],
   "tasks": [
     {
       "id": 1,
-      "catergoryId": 2,
+      "categoryId": 2,
       "text": "Изучить JavaScript",
       "completed": true
     },
     {
       "id": 2,
-      "catergoryId": 2,
+      "categoryId": 1,
       "text": "Изучить паттерны проектирования",
       "completed": false
     },
     {
       "id": 3,
-      "catergoryId": 2,
+      "categoryId": 2,
       "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)",
       "completed": true
     },
     {
       "id": 4,
-      "catergoryId": 2,
+      "categoryId": 3,
       "text": "Redux (redux-observable, redux-saga)",
       "completed": false
     }

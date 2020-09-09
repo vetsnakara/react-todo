@@ -1,4 +1,8 @@
 .tasks {
+  &__category {
+    margin-bottom: 40px;
+  }
+
   &__category-title {
     font-family: Montserrat, Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -13,5 +17,38 @@
 
   &__item {
     margin-bottom: 15px;
+  }
+}
+
+// add task
+.add-task {
+  &__input {
+    margin-bottom: 10px;
+  }
+
+  &__toggle-btn {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #B4B4B4;
+    margin-left: 5px;
+    cursor: pointer;
+
+    & .icon {
+      margin-right: 10px;
+
+      & path {
+        fill: #B4B4B4;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+
+    & > * {
+      width: auto;
+      margin-right: 5px;
+    }
   }
 }

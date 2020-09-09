@@ -4,12 +4,22 @@
   padding: 8px 15px;
   cursor: pointer;
 
-  &:hover {
-    background-color: darken(#4DD599, 10)
-  }
-
+  
   &--primary {
     color: #fff;
     background-color: #4DD599;
+  
+    &:hover {
+      background-color: darken(#4DD599, 10)
+    }
+  }
+
+  &--secondary {
+    color: #9C9C9C;
+    background-color: #F4F6F8;
+
+    &:hover {
+      background-color: darken(#F4F6F8, 5)
+    }
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import cn from 'classnames'
 
 import { icons } from './icons'
 
@@ -7,6 +8,7 @@ export const SvgIcon = ({
   width,
   height,
   size = 100,
+  className,
   ...props
 }) => {
   const icon = icons[name]
@@ -15,6 +17,13 @@ export const SvgIcon = ({
 
   if (!icon) return null
 
+
+
+  const classes = cn(
+    'icon',
+    className
+  )
+
   return (
     <svg
       width={width || size}
@@ -22,6 +31,7 @@ export const SvgIcon = ({
       viewBox={icon.viewBox}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      className={classes}
       {...props}
     >
       {icon.el}

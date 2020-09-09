@@ -7,11 +7,11 @@ import {
 
 import db from './db.json'
 
-db.categories = db.categories.map(cat => {
-  const { colorId } = cat
+db.categories = db.categories.map(category => {
+  const { colorId } = category
   const color = db.colors.find(({ id }) => id === colorId)
   return {
-    ...cat,
+    ...category,
     color: color.hex
   }
 })
@@ -46,17 +46,21 @@ export const App = () => {
   }
 
   const handleTaskToggle = id => {
-    setTasks(tasks => tasks.map((task) => task.id === id
+    setTasks(tasks => tasks.map(t => t.id === id
       ? ({
-        ...task,
-        completed: !task.completed
-      }) : task
+        ...t,
+        completed: !t.completed
+      }) : t
     ))
   }
 
   const handleTaskRemove = id => {
     if (!window.confirm('Удалить задачу?')) return
     setTasks(tasks => tasks.filter(task => task.id !== id))
+  }
+
+  const handleTaskTextChange = ({ id, text }) => {
+    setTasks(tasks => tasks.map(t => t.id === id ? ({ ...t, text }) : t))
   }
 
   return (
@@ -75,8 +79,11 @@ export const App = () => {
         <main className='todo__tasks'>
           <Tasks
             tasks={tasks}
+            categories={categories}
+            categoryId={categoryId}
             onTaskToggle={handleTaskToggle}
             onTaskRemove={handleTaskRemove}
+            onTaskTextChange={handleTaskTextChange}
           />
         </main>
       </div>
